@@ -1,0 +1,60 @@
+TEST RESULTS
+TEST ON test/testfiles/test_0.csv
+-Accuracy: 1.0000
+-f1 score: 1.0000
+-Precision: 1.0000
+-Recall: 1.0000
+
+TEST ON test/testfiles/test_1.csv
+-Accuracy: 1.0000
+-f1 score: 1.0000
+-Precision: 1.0000
+-Recall: 1.0000
+
+TEST ON test/testfiles/test_2.csv
+-Accuracy: 1.0000
+-f1 score: 1.0000
+-Precision: 1.0000
+-Recall: 1.0000
+
+TEST ON test/testfiles/test_3.csv
+-Accuracy: 1.0000
+-f1 score: 1.0000
+-Precision: 1.0000
+-Recall: 1.0000
+
+TEST ON test/testfiles/test_4.csv
+-Accuracy: 1.0000
+-f1 score: 1.0000
+-Precision: 1.0000
+-Recall: 1.0000
+
+TEST ON test/testfiles/test_5.csv
+-Accuracy: 1.0000
+-f1 score: 1.0000
+-Precision: 1.0000
+-Recall: 1.0000
+
+TEST ON test/testfiles/test_6.csv
+-Accuracy: 1.0000
+-f1 score: 1.0000
+-Precision: 1.0000
+-Recall: 1.0000
+
+TEST ON test/testfiles/test_7.csv
+-Accuracy: 1.0000
+-f1 score: 1.0000
+-Precision: 1.0000
+-Recall: 1.0000
+
+TEST ON test/testfiles/test_8.csv
+-Accuracy: 1.0000
+-f1 score: 1.0000
+-Precision: 1.0000
+-Recall: 1.0000
+
+TEST ON test/testfiles/test_9.csv
+-Accuracy: 1.0000
+-f1 score: 1.0000
+-Precision: 1.0000
+-Recall: 1.0000

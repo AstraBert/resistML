@@ -1,7 +1,6 @@
 import gzip
 from Bio import SeqIO
 from Bio.SeqUtils.ProtParam import ProteinAnalysis
-from Bio.Seq import Seq
 import json
 import pandas as pd
 
@@ -128,38 +127,38 @@ def map_classes_to_aro_indices(aro_indices: str, classes: list):
             if cla == classesexp[i]:
                 classesdict[cla].append(accessions[i])
     return classesdict
-
-fln = pd.read_csv("data/most_common_classes.csv")
-classes = list(fln["CLASS"])
-print(classes)
-aro_indices = "data/aro_categories_index.tsv"
-classesdict = map_classes_to_aro_indices(aro_indices, classes)
-fasta = open("data/protein_fasta_protein_homolog_model.fasta", "r")
-fastalines = fasta.readlines()
-fasta.close()
-headers = [line.replace("\n","") for line in fastalines if line.startswith(">")]
-seqs = read_multiplefasta("data/protein_fasta_protein_homolog_model.fasta")
-csv = open("data/proteinstats.csv", "w")
-csv.write("ENZYME_TYPE,HIDROPHOBICITY,ISOELECTRIC,AROMATIC,INSTABLE,MW,HELIX,TURN,SHEET,MOL_EXT_RED,MOL_EXT_OX\n")
-jsonf = open("data/resistance.jsonl", "w")
-counter = 0
-for j in range(len(headers)):
-    counter+=1
-    cl = check_if_in_header(classesdict, headers[j])
-    if cl != "":
-        jsonobj = json.dumps({"text": seqs[j], "label": cl})
-        jsonf.write(jsonobj+"\n")
-        hydr = hidrophobicity(seqs[j])
-        isl = isoelectric_pt(seqs[j])
-        arm = aromatic(seqs[j])
-        inst = instable(seqs[j])
-        mw = weight(seqs[j])
-        se_st = sec_struct(seqs[j])
-        me = mol_ext(seqs[j])
-        csv.write(
-            f'{cl.replace(",",":")},{hydr},{isl},{arm},{inst},{mw},{se_st},{me}\n'
-        )
-    if counter % 500 == 0:
-        print(f"Processed {counter} reads")
-jsonf.close()
-csv.close()
+if __name__ == "__main__":
+    fln = pd.read_csv("data/most_common_classes.csv")
+    classes = list(fln["CLASS"])
+    print(classes)
+    aro_indices = "data/aro_categories_index.tsv"
+    classesdict = map_classes_to_aro_indices(aro_indices, classes)
+    fasta = open("data/protein_fasta_protein_homolog_model.fasta", "r")
+    fastalines = fasta.readlines()
+    fasta.close()
+    headers = [line.replace("\n","") for line in fastalines if line.startswith(">")]
+    seqs = read_multiplefasta("data/protein_fasta_protein_homolog_model.fasta")
+    csv = open("data/proteinstats.csv", "w")
+    csv.write("ENZYME_TYPE,HIDROPHOBICITY,ISOELECTRIC,AROMATIC,INSTABLE,MW,HELIX,TURN,SHEET,MOL_EXT_RED,MOL_EXT_OX\n")
+    jsonf = open("data/resistance.jsonl", "w")
+    counter = 0
+    for j in range(len(headers)):
+        counter+=1
+        cl = check_if_in_header(classesdict, headers[j])
+        if cl != "":
+            jsonobj = json.dumps({"text": seqs[j], "label": cl})
+            jsonf.write(jsonobj+"\n")
+            hydr = hidrophobicity(seqs[j])
+            isl = isoelectric_pt(seqs[j])
+            arm = aromatic(seqs[j])
+            inst = instable(seqs[j])
+            mw = weight(seqs[j])
+            se_st = sec_struct(seqs[j])
+            me = mol_ext(seqs[j])
+            csv.write(
+                f'{cl.replace(",",":")},{hydr},{isl},{arm},{inst},{mw},{se_st},{me}\n'
+            )
+        if counter % 500 == 0:
+            print(f"Processed {counter} reads")
+    jsonf.close()
+    csv.close()

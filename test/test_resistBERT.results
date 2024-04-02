@@ -1,0 +1,59 @@
+TEST ON /content/drive/MyDrive/test_resistBERT/test_0.jsonl
+-Accuracy: 0.6250
+-f1 score: 0.6000
+-Precision: 0.8333
+-Recall: 0.6250
+
+TEST ON /content/drive/MyDrive/test_resistBERT/test_1.jsonl
+-Accuracy: 0.9500
+-f1 score: 0.9737
+-Precision: 1.0000
+-Recall: 0.9500
+
+TEST ON /content/drive/MyDrive/test_resistBERT/test_2.jsonl
+-Accuracy: 0.4643
+-f1 score: 0.4815
+-Precision: 0.5000
+-Recall: 0.4643
+
+TEST ON /content/drive/MyDrive/test_resistBERT/test_3.jsonl
+-Accuracy: 0.9524
+-f1 score: 0.9744
+-Precision: 1.0000
+-Recall: 0.9524
+
+TEST ON /content/drive/MyDrive/test_resistBERT/test_4.jsonl
+-Accuracy: 0.5000
+-f1 score: 0.5000
+-Precision: 0.5000
+-Recall: 0.5000
+
+TEST ON /content/drive/MyDrive/test_resistBERT/test_5.jsonl
+-Accuracy: 0.5758
+-f1 score: 0.5426
+-Precision: 0.5490
+-Recall: 0.5758
+
+TEST ON /content/drive/MyDrive/test_resistBERT/test_6.jsonl
+-Accuracy: 0.5778
+-f1 score: 0.6830
+-Precision: 1.0000
+-Recall: 0.5778
+
+TEST ON /content/drive/MyDrive/test_resistBERT/test_7.jsonl
+-Accuracy: 0.5952
+-f1 score: 0.6556
+-Precision: 1.0000
+-Recall: 0.5952
+
+TEST ON /content/drive/MyDrive/test_resistBERT/test_8.jsonl
+-Accuracy: 0.5641
+-f1 score: 0.6099
+-Precision: 0.6667
+-Recall: 0.5641
+
+TEST ON /content/drive/MyDrive/test_resistBERT/test_9.jsonl
+-Accuracy: 0.7179
+-f1 score: 0.8084
+-Precision: 1.0000
+-Recall: 0.7179
